@@ -1,13 +1,13 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f8ff;
-  margin: 0; /* Tambahkan margin 0 untuk menghilangkan spasi default */
-  padding: 0; /* Tambahkan padding 0 untuk menghilangkan padding default */
+  margin: 0;
+  padding: 0;
 }
 
 .container {
   margin-top: 20px;
-  padding: 0 15px; /* Tambahkan padding horizontal untuk konten */
+  padding: 0 15px;
 }
 
 .navbar {
@@ -39,20 +39,24 @@ footer {
   color: white;
   padding: 10px 0;
 }
-
-/* Media Queries untuk Responsivitas */
 @media (max-width: 768px) {
   .img-wrap {
-    width: 100%; /* Gambar akan mengambil 100% lebar pada layar kecil */
+    width: 100%;
   }
 }
 .img-wrap {
-  float: right; /* Makes the image float to the right */
-  width: 50%; /* Adjust the width as needed */
-  margin-left: 20px; /* Adds spacing between the image and the text */
-  margin-bottom: 15px; /* Adds spacing below the image */
+  float: right;
+  width: 50%;
+  margin-left: 20px;
+  margin-bottom: 15px;
 }
 .text-justify {
   text-align: justify;
   text-justify: inter-word;
+}
+.profile-card .motto {
+  font-style: italic;
+  color: #004d40;
+  margin: 0;
+  padding: 0;
 }
