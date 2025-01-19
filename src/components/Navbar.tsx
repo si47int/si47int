@@ -18,7 +18,7 @@ const Navbar = () => {
             height={40}
           />
           <span className="text-lg font-semibold dark:text-white">
-            <span className="lg:hidden">SI-47-INT</span>
+            <span className="lg:hidden">SINTER47</span>
             <span className="hidden lg:inline">
               Sinter 47 International Class
             </span>
