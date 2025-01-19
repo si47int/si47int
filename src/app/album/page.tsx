@@ -22,7 +22,7 @@ export default function Album() {
     {
       name: "Abhi",
       role: "Class Member",
-      image: "./images/Personimage/User.jpg",
+      image: "./images/Personimage/user.jpg",
       description: "Information System enthusiast",
       socialLinks: {
         instagram: "#",
