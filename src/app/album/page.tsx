@@ -44,7 +44,7 @@ export default function Album() {
         github: "#",
         discord: "#",
         youtube: "#",
-        email: "#",
+        email: "mailto:rasyaakbarlptp@gmail.com?subject=Hi%20Rasya",
       },
     },
     // Add more members here with the same structure
