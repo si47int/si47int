@@ -6,9 +6,37 @@ import Link from "next/link";
 export default function Album() {
   const classMembers = [
     {
+      name: "Wira",
+      role: "Class Member",
+      image: "./images/Personimage/user.jpg",
+      description: "Information System enthusiast",
+      socialLinks: {
+        instagram: "#",
+        linkedin: "#",
+        github: "#",
+        discord: "#",
+        youtube: "#",
+        email: "#",
+      },
+    },
+    {
+      name: "Abhi",
+      role: "Class Member",
+      image: "./images/Personimage/User.jpg",
+      description: "Information System enthusiast",
+      socialLinks: {
+        instagram: "#",
+        linkedin: "#",
+        github: "#",
+        discord: "#",
+        youtube: "#",
+        email: "#",
+      },
+    },
+    {
       name: "Rasya Akbar Lazuardi",
       role: "Class Member",
-      image: "./images/Personimage/Akbar.jpg",
+      image: "./images/Personimage/user.jpg",
       description: "Information System enthusiast with a passion for AI",
       socialLinks: {
         instagram: "#",
@@ -125,8 +153,6 @@ export default function Album() {
           ))}
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

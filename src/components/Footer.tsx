@@ -5,7 +5,7 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <footer className="bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm mt-16">
+    <footer className="bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-8 text-white">
           <div>
