@@ -5,7 +5,7 @@ import Image from "next/image";
 import ThemeToggle from "@/components/ThemeToggle";
 import Footer from "@/components/Footer";
 import React from "react";
-import Gallery from "./gallery";
+import Gallery from "./Gallery";
 import { useRouter } from "next/router";
 
 type Props = {
