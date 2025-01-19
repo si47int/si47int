@@ -7,7 +7,10 @@ const ContactPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-500 via-blue-600 to-blue-800 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="container mx-auto px-4 pb-16 pt-24">
         <h1 className="text-4xl font-bold text-white mb-12 text-center">
-          Contact Us
+          Contact {" "}
+          <span className="text-yellow-300 dark:text-yellow-400">
+              Us
+            </span>
         </h1>
 
         <div className="grid md:grid-cols-2 gap-8">
