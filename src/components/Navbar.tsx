@@ -61,7 +61,7 @@ const Navbar = (props: Props) => {
             </li>
             <li>
               <Link
-                href="contact.html"
+                href="/contact"
                 className="block py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition"
               >
                 Contact
