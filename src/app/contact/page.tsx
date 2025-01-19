@@ -20,15 +20,15 @@ const ContactPage = () => {
               program.
             </p>
             <div className="relative overflow-hidden rounded-lg">
-              <iframe
-                src="https://maps.google.com/maps?q=Gedung%20Tokong%20Nanas%20Telkom%20University&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+            
+            <iframe 
                 width="100%"
                 height="300"
                 allowFullScreen
                 loading="lazy"
-                title="Telkom University Location"
-                className="border-0"
-              ></iframe>
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Gedung%20Tokong%20Nanas%20Telkom%20University,%20bandung,%20Indonesia+(My%20Business%20Name)&amp;t=h&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                    
+            </iframe>
             </div>
           </div>
 
@@ -62,8 +62,8 @@ const ContactPage = () => {
                 className="flex items-center space-x-3 text-white/80 hover:text-white transition-all hover:translate-x-2"
                 aria-label="Follow us on Instagram"
               >
-                <Image
-                  src="/images/instagramlogo.png"
+                <img
+                  src="./images/instagramlogo.png"
                   alt=""
                   width={32}
                   height={32}
@@ -79,8 +79,8 @@ const ContactPage = () => {
                 className="flex items-center space-x-3 text-white/80 hover:text-white transition-all hover:translate-x-2"
                 aria-label="Subscribe to our YouTube channel"
               >
-                <Image
-                  src="/images/youtubelogo.png"
+                <img
+                  src="./images/youtubelogo.png"
                   alt=""
                   width={32}
                   height={32}

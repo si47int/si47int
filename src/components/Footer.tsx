@@ -7,7 +7,7 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <footer className="bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm">
+    <footer className="bg-slate-900 dark:bg-gray-800/50 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-8 text-white">
           <div>
@@ -30,20 +30,11 @@ const Footer = (props: Props) => {
               </li>
               <li>
                 <Link
-                  href="/#about"
+                  href="/album"
                   scroll={true}
                   className="text-white/80 hover:text-white transition"
                 >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#gallery"
-                  scroll={true}
-                  className="text-white/80 hover:text-white transition"
-                >
-                  Gallery
+                  Album
                 </Link>
               </li>
               <li>
