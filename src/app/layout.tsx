@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "SINTER47",
   description: "Made by SI47INT",
-  icons: "/images/logo.png",
+  icons: "./images/logo.png",
 };
 
 export default function RootLayout({
