@@ -63,11 +63,11 @@ const Navbar = () => {
             isMenuOpen ? "block" : "hidden"
           } w-full lg:block lg:w-auto transition-all duration-300 ease-in-out`}
         >
-          <ul className="flex flex-col lg:flex-row lg:space-x-8 lg:items-center mt-4 lg:mt-0">
+          <ul className="flex flex-col lg:flex-row lg:space-x-4 lg:items-center mt-4 lg:mt-0">
             <li>
               <Link
                 href="/"
-                className="block py-2 px-4 lg:px-0 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 lg:hover:bg-transparent rounded-lg transition"
+                className="block py-2 px-4 lg:px-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 lg:hover:bg-transparent rounded-lg transition"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
@@ -76,7 +76,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/album"
-                className="block py-2 px-4 lg:px-0 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 lg:hover:bg-transparent rounded-lg transition"
+                className="block py-2 px-4 lg:px-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 lg:hover:bg-transparent rounded-lg transition"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Album
@@ -85,7 +85,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/contact"
-                className="block py-2 px-4 lg:px-0 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 lg:hover:bg-transparent rounded-lg transition"
+                className="block py-2 px-4 lg:px-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 lg:hover:bg-transparent rounded-lg transition"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
