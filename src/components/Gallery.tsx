@@ -28,24 +28,19 @@ const Gallery = () => {
     {
       coverImage: {
         src: "./images/Documentation/Documentation2.JPG",
-        title: "Dari Waktu ke Waktu",
-        description: "Cintaku padamu",
+        title: "Penjaketan Genesis 2024",
+        description: "",
       },
       relatedImages: [
         {
           src: "./images/Documentation/Documentation2.JPG",
-          title: "test",
-          description: "Morning Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        },
-        {
-          src: "./images/Documentation/Documentation3.JPG",
           title: "",
-          description: "",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         },
         {
           src: "./images/Documentation/Documentation4.JPG",
-          title: "test",
-          description: "Morning Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          title: "",
+          description: "",
         },
         {
           src: "./images/Documentation/Documentation5.JPG",
@@ -54,8 +49,8 @@ const Gallery = () => {
         },
         {
           src: "./images/Documentation/Documentation6.JPG",
-          title: "test",
-          description: "Morning Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          title: "",
+          description: "",
         },
         {
           src: "./images/Documentation/Documentation1.JPG",
@@ -67,13 +62,13 @@ const Gallery = () => {
     },
     {
       coverImage: {
-        src: "./images/Documentation/Documentation1.JPG",
-        title: "Padamu SI",
-        description: "Kami berjanji",
+        src: "./images/default img.png",
+        title: "Makrab 2025",
+        description: "-",
       },
       relatedImages: [
         {
-          src: "./images/Documentation/Documentation1.JPG",
+          src: "./images/default img.png",
           title: "Event Photo",
           description: "Special moment",
         },
