@@ -66,7 +66,7 @@ export default function Album() {
     {
       name: "Rasya Akbar Lazuardi",
       role: "Class Member",
-      image: "./images/Personimage/user.jpg",
+      image: "./images/Personimage/Rasya/Akbar.jpg",
       description: "Information System enthusiast with a passion for AI",
       socialLinks: {
         instagram: "#",
@@ -77,6 +77,36 @@ export default function Album() {
         website: "#",
         email: "mailto:rasyaakbarlptp@gmail.com?subject=Hi%20Rasya",
         spotify: "#",
+      },
+    },
+    {
+      name: "Thiflan Hakim Alfarizzy",
+      role: "Class Member",
+      image: "./images/Personimage/Thiflan/Thiflan.jpg",
+      description: "Chicken Enthusiast, Practicum Assistant of Jarkom",
+      socialLinks: {
+        instagram: "https://www.instagram.com/yzzirafla",
+        linkedin: "https://www.linkedin.com/in/alfarizzy/",
+        github: "https://github.com/thiflana",
+        tiktok: "https://www.tiktok.com/@dr.eveland",
+        youtube: "https://www.youtube.com/@thiflana6523",
+        website: "https://thiflana.github.io/cv-html/",
+        email: "mailto:thiflansetiawan@gmail.com?subject=Hi%20Thiflan",
+      },
+    },
+    {
+      name: "Ahmad Dwi Juliyansyah",
+      role: "Class Member",
+      image: "./images/Personimage/Dwi/Dwi.jpeg",
+      description: "Information System student who likes to explore anything.",
+      socialLinks: {
+        instagram: "https://www.instagram.com/ahmdddwi",
+        linkedin: "https://www.linkedin.com/in/ahmaddwijuliyansyah/",
+        github: "https://github.com/AhmadDwiJ",
+        youtube:
+          "https://youtube.com/@ahmaddwijuliyansyah8153?si=t5dMYT86--lf1QGz",
+        website: "https://ahmaddwij.github.io/WebsitePorto/",
+        email: "mailto:ahmad.wii000@gmail.com?subject=Hi%20Ahmad",
       },
     },
     // Add more members here with the same structure
