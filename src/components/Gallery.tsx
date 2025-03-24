@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-type Props = {}
+type Props = {};
 
 const Gallery = (props: Props) => {
-    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const galleryImages = [
     {
@@ -69,6 +69,7 @@ const Gallery = (props: Props) => {
         >
           <div className="relative max-w-7xl w-full">
             <button
+              title="Close"
               className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
               onClick={() => setSelectedImage(null)}
             >
@@ -99,4 +100,4 @@ const Gallery = (props: Props) => {
   );
 };
 
-export default Gallery
+export default Gallery;
