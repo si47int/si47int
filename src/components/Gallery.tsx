@@ -7,22 +7,22 @@ const Gallery = (props: Props) => {
 
   const galleryImages = [
     {
-      src: "./images/Documentation/Documentation2.JPG",
+      src: "./images/Documentation/Genesis/Genesis2.JPG",
       title: "Dari Waktu ke Waktu",
       description: "Cintaku padamu",
     },
     {
-      src: "./images/Documentation/Documentation1.JPG",
+      src: "./images/Documentation/Genesis/Genesis1.JPG",
       title: "Padamu SI",
       description: "Kami berjanji",
     },
     {
-      src: "./images/Documentation/Documentation4.JPG",
+      src: "./images/Documentation/Genesis/Genesis4.JPG",
       title: "We love cyan ku we do",
       description: "Cyanku we love you",
     },
     {
-      src: "./images/Documentation/Documentation5.JPG",
+      src: "./images/Documentation/Genesis/Genesis5.JPG",
       title: "Syalalalalalala",
       description: "H~M~S~I",
     },
