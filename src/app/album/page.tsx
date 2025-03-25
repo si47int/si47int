@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ImageCarousel from "@/components/ImageCarousel";
@@ -24,35 +24,6 @@ interface ClassMember {
   description: string;
   socialLinks: SocialLinks;
 }
-
-// Custom wrapper for ImageCarousel with indicators
-interface ImageCarouselProps {
-  images: string[];
-  name: string;
-  onSlideChange?: (index: number) => void;
-}
-
-const ImageCarouselWithIndicator = ({
-  images,
-  name,
-  onSlideChange,
-}: ImageCarouselProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Function to update current index (this will be called from child component)
-  const updateIndex = (index: number) => {
-    setCurrentIndex(index);
-  };
-
-  return (
-    <div className="relative">
-      <ImageCarousel images={images} name={name} onSlideChange={updateIndex} />
-      <div className="absolute top-3 right-3 bg-black/50 text-white px-3 py-1 rounded-full text-sm font-medium z-10">
-        {currentIndex + 1}/{images.length}
-      </div>
-    </div>
-  );
-};
 
 export default function Album() {
   const classMembers: ClassMember[] = [
@@ -168,13 +139,10 @@ export default function Album() {
               key={index}
               className="bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 transform hover:scale-105 transition-all duration-300"
             >
-              {/* Image or Image Carousel with indicator */}
+              {/* Image or Image Carousel */}
               {index === 0 ? (
                 member.images && (
-                  <ImageCarouselWithIndicator
-                    images={member.images}
-                    name={member.name}
-                  />
+                  <ImageCarousel images={member.images} name={member.name} />
                 )
               ) : (
                 <div className="relative w-full h-fit mb-6 rounded-lg overflow-hidden">
@@ -299,7 +267,7 @@ export default function Album() {
                   </Link>
                 )}
 
-                {/* Spotify - New icon for Spotify */}
+                {/* Spotify */}
                 {member.socialLinks.spotify && (
                   <Link
                     href={member.socialLinks.spotify}

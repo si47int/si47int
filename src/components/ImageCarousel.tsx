@@ -5,13 +5,10 @@ import { useState, useRef, useEffect } from "react";
 interface ImageCarouselProps {
   images: string[];
   name: string;
-}
-interface ImageCarouselProps {
-  images: string[];
-  name: string;
   onSlideChange?: (index: number) => void;
 }
-const ImageCarousel = ({ images, name }: ImageCarouselProps) => {
+
+const ImageCarousel = ({ images, name, onSlideChange }: ImageCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
@@ -20,6 +17,13 @@ const ImageCarousel = ({ images, name }: ImageCarouselProps) => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const minSwipeDistance = 50; // Minimum distance for a swipe to register
+
+  // Update the parent component whenever currentIndex changes
+  useEffect(() => {
+    if (onSlideChange) {
+      onSlideChange(currentIndex);
+    }
+  }, [currentIndex, onSlideChange]);
 
   const nextSlide = () => {
     if (isTransitioning) return;
