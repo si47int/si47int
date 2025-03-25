@@ -51,7 +51,7 @@ export default function Album() {
     {
       name: "Muhammad Iqbal Abhipraya",
       role: "Class Member",
-      image: "./images/Personimage/user.jpg",
+      image: "./images/Personimage/Abhi/Abhi.png",
       description: "Information System enthusiast with a passion for AI",
       socialLinks: {
         instagram: "#",
