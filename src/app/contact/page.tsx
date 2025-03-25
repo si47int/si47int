@@ -7,10 +7,8 @@ const ContactPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-500 via-blue-600 to-blue-800 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="container mx-auto px-4 pb-16 pt-24">
         <h1 className="text-4xl font-bold text-white mb-12 text-center">
-          Contact {" "}
-          <span className="text-yellow-300 dark:text-yellow-400">
-              Us
-            </span>
+          Contact{" "}
+          <span className="text-yellow-300 dark:text-yellow-400">Us</span>
         </h1>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -19,19 +17,16 @@ const ContactPage = () => {
             <h2 className="text-2xl font-bold text-white mb-4">Our Location</h2>
             <p className="text-white/80 dark:text-gray-300 mb-6">
               We are at Telkom University, a place where innovation and
-              technology come together. You can visit us to talk more about our
-              program.
+              technology come together.
             </p>
             <div className="relative overflow-hidden rounded-lg">
-            
-            <iframe 
+              <iframe
                 width="100%"
                 height="300"
                 allowFullScreen
                 loading="lazy"
-                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Gedung%20Tokong%20Nanas%20Telkom%20University,%20bandung,%20Indonesia+(My%20Business%20Name)&amp;t=h&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-                    
-            </iframe>
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Gedung%20Tokong%20Nanas%20Telkom%20University,%20bandung,%20Indonesia+(My%20Business%20Name)&amp;t=h&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              ></iframe>
             </div>
           </div>
 
@@ -56,8 +51,6 @@ const ContactPage = () => {
 
             <h2 className="text-2xl font-bold text-white mb-4">Follow Us</h2>
             <div className="flex flex-col space-y-4">
-              
-
               <a
                 href="https://www.instagram.com/47sinter"
                 target="_blank"
