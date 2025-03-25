@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 import ImageCarousel from "@/components/ImageCarousel";
@@ -13,7 +14,7 @@ interface SocialLinks {
   youtube?: string;
   email?: string;
   website?: string;
-  spotify?: string;
+  spotify?: string; // Added Spotify field
 }
 
 interface ClassMember {
@@ -267,7 +268,7 @@ export default function Album() {
                   </Link>
                 )}
 
-                {/* Spotify */}
+                {/* Spotify - New icon for Spotify */}
                 {member.socialLinks.spotify && (
                   <Link
                     href={member.socialLinks.spotify}

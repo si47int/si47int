@@ -5,10 +5,9 @@ import { useState, useRef, useEffect } from "react";
 interface ImageCarouselProps {
   images: string[];
   name: string;
-  onSlideChange?: (index: number) => void;
 }
 
-const ImageCarousel = ({ images, name, onSlideChange }: ImageCarouselProps) => {
+const ImageCarousel = ({ images, name }: ImageCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
@@ -17,13 +16,6 @@ const ImageCarousel = ({ images, name, onSlideChange }: ImageCarouselProps) => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const minSwipeDistance = 50; // Minimum distance for a swipe to register
-
-  // Update the parent component whenever currentIndex changes
-  useEffect(() => {
-    if (onSlideChange) {
-      onSlideChange(currentIndex);
-    }
-  }, [currentIndex, onSlideChange]);
 
   const nextSlide = () => {
     if (isTransitioning) return;
@@ -151,54 +143,6 @@ const ImageCarousel = ({ images, name, onSlideChange }: ImageCarouselProps) => {
           />
         </div>
       </div>
-
-      {/* Image indicator */}
-      <div className="absolute top-3 right-3 bg-black/50 text-white px-3 py-1 rounded-full text-sm font-medium">
-        {currentIndex + 1}/{images.length}
-      </div>
-
-      {/* Navigation buttons */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 transition"
-        aria-label="Previous image"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-      </button>
-
-      <button
-        onClick={nextSlide}
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 transition"
-        aria-label="Next image"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5l7 7-7 7"
-          />
-        </svg>
-      </button>
 
       {/* Dots navigation */}
       <div className="absolute bottom-2 left-0 right-0 flex justify-center space-x-2">
