@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ImageCarousel from "@/components/ImageCarousel";
@@ -13,7 +13,7 @@ interface SocialLinks {
   youtube?: string;
   email?: string;
   website?: string;
-  spotify?: string; // Added Spotify field
+  spotify?: string;
 }
 
 interface ClassMember {
