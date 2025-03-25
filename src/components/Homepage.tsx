@@ -18,9 +18,7 @@ const Homepage = (props: Props) => {
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
-  
   return (
-
     <div className="min-h-screen bg-gradient-to-br from-blue-500 via-blue-600 to-blue-800 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <section className="container mx-auto px-4 pt-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -49,7 +47,7 @@ const Homepage = (props: Props) => {
           <div className="relative animate-float">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-400 to-pink-500 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
             <img
-              src="./images/Documentation/Documentation3.JPG"
+              src="./images/Documentation/Global/Global1.jpg"
               alt="Documentation"
               className="relative w-full rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-500"
             />
@@ -96,12 +94,11 @@ const Homepage = (props: Props) => {
         </div>
       </section>
 
-        <section id="gallery">
-            <Gallery />
-        </section>
-      
+      <section id="gallery">
+        <Gallery />
+      </section>
 
-        <section id="hey" className="container mx-auto px-4 py-16">
+      <section id="hey" className="container mx-auto px-4 py-16">
         <div className="bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
             Listen to Our Anthem

@@ -99,7 +99,7 @@ export default function Album() {
       name: "Ahmad Dwi Juliyansyah",
       role: "Class Member",
       image: "./images/Personimage/Dwi/Dwi.jpeg",
-      description: "Information System student who likes to explore anything.",
+      description: "Information System student who likes to explore anything",
       socialLinks: {
         instagram: "https://www.instagram.com/ahmdddwi",
         linkedin: "https://www.linkedin.com/in/ahmaddwijuliyansyah/",
