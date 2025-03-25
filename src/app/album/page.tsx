@@ -174,11 +174,16 @@ export default function Album() {
                   <ImageCarousel images={member.images} name={member.name} />
                 )
               ) : (
-                <div className="relative w-full h-fit mb-6 rounded-lg overflow-hidden">
+                <div
+                  className="relative w-full mb-6 rounded-lg overflow-hidden"
+                  style={{ paddingBottom: "133.33%" }}
+                >
+                  {" "}
+                  {/* 4:3 ratio (133.33%) */}
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="object-cover"
+                    className="absolute top-0 left-0 w-full h-full object-cover"
                   />
                 </div>
               )}
