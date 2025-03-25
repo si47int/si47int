@@ -47,7 +47,7 @@ const Homepage = (props: Props) => {
           <div className="relative animate-float">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-400 to-pink-500 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
             <img
-              src="./images/Documentation/Global/Global1.jpg"
+              src="./images/Documentation/Global/Global1.JPG"
               alt="Documentation"
               className="relative w-full rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-500"
             />
