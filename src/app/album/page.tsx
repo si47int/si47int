@@ -32,10 +32,10 @@ export default function Album() {
       name: "Anak Agung Gde Agung Wira Indramawan",
       role: "Class Member",
       images: [
-        "./images/Personimage/Wira/wira.jpg",
-        "./images/Personimage/Wira/wira1.jpg",
-        "./images/Personimage/Wira/wira2.jpg",
-        "./images/Personimage/Wira/wira3.jpg",
+        "./images/Personimage/Wira/Wira.jpg",
+        "./images/Personimage/Wira/Wira1.jpg",
+        "./images/Personimage/Wira/Wira2.jpg",
+        "./images/Personimage/Wira/Wira3.jpg",
       ],
       description: "alamakk jangg ada web kelas cuy😹😹",
       socialLinks: {
