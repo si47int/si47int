@@ -110,6 +110,34 @@ export default function Album() {
         email: "mailto:ahmad.wii000@gmail.com?subject=Hi%20Ahmad",
       },
     },
+    {
+      name: "Mochamad Diaz Reksa Putra",
+      role: "Class Member",
+      image: "./images/Personimage/Diaz/Diaz.jpeg",
+      description: "i like cats",
+      socialLinks: {
+        instagram:
+          "https://www.instagram.com/froloxdiz?igsh=enl4anhpemtyNzQz&utm_source=qr",
+        youtube: "https://youtube.com/@froloxdiz?si=HanjJNXT3sbQ01Ry",
+        email: "mailto:diazreksaputra@gmail.com?subject=Hi%20Diaz",
+        spotify:
+          "https://open.spotify.com/user/312bxs2uk7dzrqvl7xb7ibdbybfu?si=iaIf1qYVSsuiyxGrJKgcwQ",
+      },
+    },
+    // {
+    //   name: "-",
+    //   role: "Class Member",
+    //   image: "./images/Personimage/",
+    //   description: "-",
+    //   socialLinks: {
+    //     instagram: "#",
+    //     linkedin: "#",
+    //     github: "#",
+    //     youtube: "#",
+    //     website: "#",
+    //     email: "mailto:ahmad.wii000@gmail.com?subject=Hi%20Ahmad",
+    //   },
+    // },
     // Add more members here with the same structure
   ];
 
