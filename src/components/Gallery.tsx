@@ -71,7 +71,7 @@ const Gallery = (props: Props) => {
   const badmintonEventImages = [
     {
       // Replace this with a smaller video or just use an image instead
-      src: "./images/Documentation/Badminton/Badminton2.JPG", // Changed from Badminton1.MP4
+      src: "./images/Documentation/Badminton/Badminton1.mp4", // Changed from Badminton1.MP4
       title: "Friendly Competition",
       description: "SI 47 INT students showing their badminton skills",
     },
@@ -82,7 +82,7 @@ const Gallery = (props: Props) => {
     },
     {
       // Replace this with a smaller video or just use an image instead
-      src: "./images/Documentation/Badminton/Badminton4.JPG", // Changed from Badminton3.MP4
+      src: "./images/Documentation/Badminton/Badminton3.mp4", // Changed from Badminton3.MP4
       title: "Victory Pose",
       description: "Celebrating after an intense match",
     },
