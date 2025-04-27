@@ -2,12 +2,15 @@
 
 import React, { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
+import LanguageSwitcher from "./LanguageSwitcher";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
+  const { t } = useLanguage();
 
   // Handle window resize and initial size detection
   useEffect(() => {
@@ -58,7 +61,12 @@ const Navbar = () => {
         </Link>
 
         <div className="flex items-center space-x-4">
+          {/* Moved ThemeToggle before LanguageSwitcher */}
           <ThemeToggle />
+
+          {/* Language Switcher component will position itself on the far right */}
+          <LanguageSwitcher />
+
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -118,7 +126,7 @@ const Navbar = () => {
                     className="block py-2 px-4 lg:px-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 lg:hover:bg-transparent rounded-lg transition"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    About Us
+                    {t("aboutUs")}
                   </Link>
                 </motion.li>
                 <motion.li
@@ -130,7 +138,7 @@ const Navbar = () => {
                     className="block py-2 px-4 lg:px-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 lg:hover:bg-transparent rounded-lg transition"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Album
+                    {t("album")}
                   </Link>
                 </motion.li>
                 <motion.li
@@ -142,7 +150,7 @@ const Navbar = () => {
                     className="block py-2 px-4 lg:px-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 lg:hover:bg-transparent rounded-lg transition"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Contact
+                    {t("contact")}
                   </Link>
                 </motion.li>
               </ul>

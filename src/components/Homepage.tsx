@@ -7,12 +7,14 @@ import Footer from "@/components/Footer";
 import React from "react";
 import Gallery from "./Gallery";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type Props = {
   footer?: string;
 };
 
 const Homepage = (props: Props) => {
+  const { t } = useLanguage();
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
@@ -56,7 +58,7 @@ const Homepage = (props: Props) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Welcome to{" "}
+              {t("welcome")}{" "}
               <motion.span
                 className="text-yellow-300 dark:text-yellow-400"
                 animate={{
@@ -72,7 +74,7 @@ const Homepage = (props: Props) => {
                 Sinter 47
               </motion.span>
               <br />
-              International Class
+              {t("internationalClass")}
             </motion.h2>
             <motion.p
               className="text-white/90 dark:text-gray-300 text-lg leading-relaxed"
@@ -91,7 +93,7 @@ const Homepage = (props: Props) => {
                 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Learn More
+                {t("learnMore")}
               </motion.button>
             </motion.div>
           </motion.div>
@@ -142,25 +144,24 @@ const Homepage = (props: Props) => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          What We Do?
+          {t("whatWeDo")}
         </motion.h2>
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
               icon: "🌍",
-              title: "Global Standards",
-              description: "Learn the latest and best in information systems",
+              title: t("globalStandards"),
+              description: t("globalStandardsDesc"),
             },
             {
               icon: "💡",
-              title: "Encourage Innovations",
-              description:
-                "We encourage each other to create innovations that can change the way we live and work",
+              title: t("encourageInnovations"),
+              description: t("encourageInnovationsDesc"),
             },
             {
               icon: "🤝",
-              title: "Global Network",
-              description: "Collaborate with universities worldwide",
+              title: t("globalNetwork"),
+              description: t("globalNetworkDesc"),
             },
           ].map((feature, index) => (
             <motion.div
@@ -225,7 +226,7 @@ const Homepage = (props: Props) => {
             }}
             transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
           >
-            Listen to Our Anthem
+            {t("listenToAnthem")}
           </motion.h2>
           <motion.audio
             controls

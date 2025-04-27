@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type Props = {};
 
 const Gallery = (props: Props) => {
+  const { t } = useLanguage(); // Add this line to access translations
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedMediaType, setSelectedMediaType] = useState<"image" | "video">(
     "image"
@@ -21,50 +23,46 @@ const Gallery = (props: Props) => {
   const galleryImages = [
     {
       src: "./images/Documentation/Genesis/Genesis2.JPG",
-      title: "Dari Waktu ke Waktu",
-      description: "Cintaku padamu",
+      title: t("genesisImage1Title"),
+      description: t("genesisImage1Desc"),
     },
     {
       src: "./images/Documentation/Genesis/Genesis1.JPG",
-      title: "Padamu SI",
-      description: "Kami berjanji",
+      title: t("genesisImage2Title"),
+      description: t("genesisImage2Desc"),
     },
     {
       src: "./images/Documentation/Genesis/Genesis4.JPG",
-      title: "We love cyan ku we do",
-      description: "Cyanku we love you",
+      title: t("genesisImage3Title"),
+      description: t("genesisImage3Desc"),
     },
     {
       src: "./images/Documentation/Genesis/Genesis5.JPG",
-      title: "Syalalalalalala",
-      description: "H~M~S~I",
+      title: t("genesisImage4Title"),
+      description: t("genesisImage4Desc"),
     },
   ];
 
   const secondEventImages = [
     {
       src: "./images/Documentation/Makrab/Makrab1.JPG",
-      title: "A Night to Remember",
-      description:
-        "The beginning of new friendships and unforgettable memories under the same stars.",
+      title: t("makrabImage1Title"),
+      description: t("makrabImage1Desc"),
     },
     {
       src: "./images/Documentation/Makrab/Makrab2.JPG",
-      title: "Laughter in Every Corner",
-      description:
-        "Smiles, jokes, and warm conversations that brought us closer as one family.",
+      title: t("makrabImage2Title"),
+      description: t("makrabImage2Desc"),
     },
     {
       src: "./images/Documentation/Makrab/Makrab3.JPG",
-      title: "Together, We Belong",
-      description:
-        "In this moment, we were more than classmates we were a team, a bond, a home.",
+      title: t("makrabImage3Title"),
+      description: t("makrabImage3Desc"),
     },
     {
       src: "./images/Documentation/Makrab/Makrab4.JPG",
-      title: "Hearts Connected",
-      description:
-        "Surrounded by nature, laughter, and friendship our hearts found their place",
+      title: t("makrabImage4Title"),
+      description: t("makrabImage4Desc"),
     },
   ];
 
@@ -72,23 +70,23 @@ const Gallery = (props: Props) => {
   const badmintonEventImages = [
     {
       src: "./images/Documentation/Badminton/Badminton1.mp4",
-      title: "Friendly Competition",
-      description: "SI 47 INT students showing their badminton skills",
+      title: t("badmintonImage1Title"),
+      description: t("badmintonImage1Desc"),
     },
     {
       src: "./images/Documentation/Badminton/Badminton2.JPG",
-      title: "Team Spirit",
-      description: "Supporting and cheering for teammates during matches",
+      title: t("badmintonImage2Title"),
+      description: t("badmintonImage2Desc"),
     },
     {
       src: "./images/Documentation/Badminton/Badminton3.mp4",
-      title: "Victory Pose",
-      description: "Celebrating after an intense match",
+      title: t("badmintonImage3Title"),
+      description: t("badmintonImage3Desc"),
     },
     {
       src: "./images/Documentation/Badminton/Badminton4.JPG",
-      title: "Group Photo",
-      description: "Everyone who participated in the badminton event",
+      title: t("badmintonImage4Title"),
+      description: t("badmintonImage4Desc"),
     },
   ];
 
@@ -96,23 +94,23 @@ const Gallery = (props: Props) => {
   const glowEventImages = [
     {
       src: "./images/Documentation/GLOW/GLOW1.JPG",
-      title: "International Learning",
-      description: "Students learning from Malaysian professors",
+      title: t("glowImage1Title"),
+      description: t("glowImage1Desc"),
     },
     {
       src: "./images/Documentation/GLOW/GLOW2.JPG",
-      title: "Class",
-      description: "One class photo",
+      title: t("glowImage2Title"),
+      description: t("glowImage2Desc"),
     },
     {
       src: "./images/Documentation/GLOW/GLOW3.JPG",
-      title: "Opening Ceremony",
-      description: "Opening the GLOW Program",
+      title: t("glowImage3Title"),
+      description: t("glowImage3Desc"),
     },
     {
       src: "./images/Documentation/GLOW/GLOW4.JPG",
-      title: "International Class",
-      description: "Students attending international classes",
+      title: t("glowImage4Title"),
+      description: t("glowImage4Desc"),
     },
   ];
 
@@ -120,23 +118,23 @@ const Gallery = (props: Props) => {
   const BUKBERImages = [
     {
       src: "./images/Documentation/BUKBER/BUKBER1.JPG",
-      title: "Together",
-      description: "SI 47 INT students gathering",
+      title: t("bukberImage1Title"),
+      description: t("bukberImage1Desc"),
     },
     {
       src: "./images/Documentation/BUKBER/BUKBER2.JPG",
-      title: "Special Meal",
-      description: "Sharing food and drinks",
+      title: t("bukberImage2Title"),
+      description: t("bukberImage2Desc"),
     },
     {
       src: "./images/Documentation/BUKBER/BUKBER3.JPG",
-      title: "Friendship Moment",
-      description: "Building bonds during this special time",
+      title: t("bukberImage3Title"),
+      description: t("bukberImage3Desc"),
     },
     {
       src: "./images/Documentation/BUKBER/BUKBER4.JPG",
-      title: "Group Prayer",
-      description: "Coming together in spirituality",
+      title: t("bukberImage4Title"),
+      description: t("bukberImage4Desc"),
     },
   ];
 
@@ -182,7 +180,7 @@ const Gallery = (props: Props) => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          Our Gallery
+          {t("ourGallery")}
         </motion.h2>
 
         {/* First Event Section - Text on Left */}
@@ -200,29 +198,21 @@ const Gallery = (props: Props) => {
                 className="text-2xl font-bold mb-2"
                 variants={textVariants}
               >
-                Genesis Graduation & Jacket Ceremony
+                {t("genesisTitle")}
               </motion.h3>
               <motion.p
                 className="text-yellow-300 dark:text-yellow-400 mb-4"
                 variants={textVariants}
               >
-                24 November 2024
+                {t("genesisDate")}
               </motion.p>
               <motion.p className="mb-4" variants={textVariants}>
-                This was a special moment where we officially graduated from
-                Genesis and received our Himpunan Jacket. It was more than just
-                a ceremony it was a symbol of trust and responsibility.
+                {t("genesisDesc1")}
               </motion.p>
               <motion.p className="mb-4" variants={textVariants}>
-                From this day on, we carry the name of Information Systems,
-                Telkom University, with pride and honor. Every thread of the
-                jacket reminds us of our journey, our growth, and our unity.
+                {t("genesisDesc2")}
               </motion.p>
-              <motion.p variants={textVariants}>
-                This event marked the beginning of our duty as true members of
-                the organization. With hearts full of memories and dreams, we
-                are ready to take our next steps together.
-              </motion.p>
+              <motion.p variants={textVariants}>{t("genesisDesc3")}</motion.p>
             </motion.div>
 
             {/* Event Gallery */}
@@ -280,28 +270,21 @@ const Gallery = (props: Props) => {
                 className="text-2xl font-bold mb-2"
                 variants={textVariants}
               >
-                Makrab SI 47 INT
+                {t("makrabTitle")}
               </motion.h3>
               <motion.p
                 className="text-yellow-300 dark:text-yellow-400 mb-4"
                 variants={textVariants}
               >
-                10 January 2025
+                {t("makrabDate")}
               </motion.p>
               <motion.p className="mb-4" variants={textVariants}>
-                Makrab SI 47 INT was a special night where all classmates
-                gathered to get to know each other better. We spent time
-                together in a fun and relaxing place outside the campus.
+                {t("makrabDesc1")}
               </motion.p>
               <motion.p className="mb-4" variants={textVariants}>
-                There were many exciting activities like games, and a bonfire.
-                We laughed, talked, and created great memories as a class.
+                {t("makrabDesc2")}
               </motion.p>
-              <motion.p variants={textVariants}>
-                This event helped us build stronger friendship and teamwork in
-                SI 47 INT. It was a night full of joy, connection, and
-                unforgettable moments for everyone.
-              </motion.p>
+              <motion.p variants={textVariants}>{t("makrabDesc3")}</motion.p>
             </motion.div>
 
             {/* Event Gallery (now on left) */}
@@ -359,28 +342,21 @@ const Gallery = (props: Props) => {
                 className="text-2xl font-bold mb-2"
                 variants={textVariants}
               >
-                SI 47 INT Badminton Tournament
+                {t("badmintonTitle")}
               </motion.h3>
               <motion.p
                 className="text-yellow-300 dark:text-yellow-400 mb-4"
                 variants={textVariants}
               >
-                26 April 2025
+                {t("badmintonDate")}
               </motion.p>
               <motion.p className="mb-4" variants={textVariants}>
-                We held a fun badminton game to help us stay active and become
-                closer friends. Everyone could play and have fun together.
+                {t("badmintonDesc1")}
               </motion.p>
               <motion.p className="mb-4" variants={textVariants}>
-                We played at SIGMA GOR. We made courts for one player games and
-                two player games. All students could join, even if they were not
-                good at badminton, so everyone had fun.
+                {t("badmintonDesc2")}
               </motion.p>
-              <motion.p variants={textVariants}>
-                The games gave us a good break from our school work. We could
-                make friends through sports. We cheered, laughed, and worked as
-                a team, which made this day special for everyone.
-              </motion.p>
+              <motion.p variants={textVariants}>{t("badmintonDesc3")}</motion.p>
             </motion.div>
 
             {/* Event Gallery */}
@@ -453,30 +429,21 @@ const Gallery = (props: Props) => {
                 className="text-2xl font-bold mb-2"
                 variants={textVariants}
               >
-                GLOW International Program
+                {t("glowTitle")}
               </motion.h3>
               <motion.p
                 className="text-yellow-300 dark:text-yellow-400 mb-4"
                 variants={textVariants}
               >
-                12 July 2024
+                {t("glowDate")}
               </motion.p>
               <motion.p className="mb-4" variants={textVariants}>
-                GLOW is a special program at Telkom University that brings
-                teachers from Malaysia. The program started at Tokong Nanas
-                Building to help students learn in an international way.
+                {t("glowDesc1")}
               </motion.p>
               <motion.p className="mb-4" variants={textVariants}>
-                Six teachers from different Malaysia universities came to teach
-                six subjects. They teach students from four study programs at
-                Telkom University.
+                {t("glowDesc2")}
               </motion.p>
-              <motion.p variants={textVariants}>
-                This program helps students learn new things and see how
-                students in other countries learn. It makes Telkom University
-                more international and helps our students get ready for the
-                world.
-              </motion.p>
+              <motion.p variants={textVariants}>{t("glowDesc3")}</motion.p>
             </motion.div>
 
             {/* Event Gallery */}
@@ -534,29 +501,21 @@ const Gallery = (props: Props) => {
                 className="text-2xl font-bold mb-2"
                 variants={textVariants}
               >
-                Buka Bersama SI 47 INT
+                {t("bukberTitle")}
               </motion.h3>
               <motion.p
                 className="text-yellow-300 dark:text-yellow-400 mb-4"
                 variants={textVariants}
               >
-                23 March 2024
+                {t("bukberDate")}
               </motion.p>
               <motion.p className="mb-4" variants={textVariants}>
-                We held a special Buka Bersama event where all students came
-                together. It was a time to share food and stories as we
-                celebrated this special day.
+                {t("bukberDesc1")}
               </motion.p>
               <motion.p className="mb-4" variants={textVariants}>
-                Everyone brought different foods to share. We sat together,
-                talked, and waited for the time. Some students also led prayers
-                before we ate.
+                {t("bukberDesc2")}
               </motion.p>
-              <motion.p variants={textVariants}>
-                This event helped us learn about each other's cultures and grow
-                closer as friends. We made good memories and felt like a real
-                family at SI 47 INT.
-              </motion.p>
+              <motion.p variants={textVariants}>{t("bukberDesc3")}</motion.p>
             </motion.div>
 
             {/* Event Gallery */}

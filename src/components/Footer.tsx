@@ -3,10 +3,13 @@
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type Props = {};
 
 const Footer = (props: Props) => {
+  const { t } = useLanguage();
+
   return (
     <motion.footer
       className="bg-slate-900 dark:bg-gray-800/50 backdrop-blur-sm"
@@ -23,11 +26,8 @@ const Footer = (props: Props) => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h3 className="text-xl font-bold mb-4">About Us</h3>
-            <p className="text-white/80">
-              Sinter 47 International Class at Telkom University, creating
-              future leaders in information systems.
-            </p>
+            <h3 className="text-xl font-bold mb-4">{t("aboutUs")}</h3>
+            <p className="text-white/80">{t("aboutUsFooter")}</p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ const Footer = (props: Props) => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+            <h3 className="text-xl font-bold mb-4">{t("quickLinks")}</h3>
             <ul className="space-y-2">
               <motion.li
                 whileHover={{ x: 5 }}
@@ -45,7 +45,7 @@ const Footer = (props: Props) => {
                   href="/"
                   className="text-white/80 hover:text-white transition"
                 >
-                  Home
+                  {t("home")}
                 </Link>
               </motion.li>
               <motion.li
@@ -57,7 +57,7 @@ const Footer = (props: Props) => {
                   scroll={true}
                   className="text-white/80 hover:text-white transition"
                 >
-                  Album
+                  {t("album")}
                 </Link>
               </motion.li>
               <motion.li
@@ -68,7 +68,7 @@ const Footer = (props: Props) => {
                   href="/contact"
                   className="text-white/80 hover:text-white transition"
                 >
-                  Contact
+                  {t("contact")}
                 </Link>
               </motion.li>
             </ul>
@@ -79,7 +79,7 @@ const Footer = (props: Props) => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
+            <h3 className="text-xl font-bold mb-4">{t("connectWithUs")}</h3>
             <div className="flex space-x-4">
               <motion.div
                 whileHover={{ scale: 1.2, rotate: 10 }}
@@ -166,7 +166,9 @@ const Footer = (props: Props) => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <p>&copy; 2023 Sinter47 Telkom University. All rights reserved.</p>
+          <p>
+            &copy; 2023 Sinter47 Telkom University. {t("allRightsReserved")}
+          </p>
         </motion.div>
       </div>
     </motion.footer>
