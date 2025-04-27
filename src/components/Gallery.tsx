@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 type Props = {};
 
@@ -70,8 +71,7 @@ const Gallery = (props: Props) => {
   // Add new array for badminton event images
   const badmintonEventImages = [
     {
-      // Replace this with a smaller video or just use an image instead
-      src: "./images/Documentation/Badminton/Badminton1.mp4", // Changed from Badminton1.MP4
+      src: "./images/Documentation/Badminton/Badminton1.mp4",
       title: "Friendly Competition",
       description: "SI 47 INT students showing their badminton skills",
     },
@@ -81,8 +81,7 @@ const Gallery = (props: Props) => {
       description: "Supporting and cheering for teammates during matches",
     },
     {
-      // Replace this with a smaller video or just use an image instead
-      src: "./images/Documentation/Badminton/Badminton3.mp4", // Changed from Badminton3.MP4
+      src: "./images/Documentation/Badminton/Badminton3.mp4",
       title: "Victory Pose",
       description: "Celebrating after an intense match",
     },
@@ -141,152 +140,254 @@ const Gallery = (props: Props) => {
     },
   ];
 
+  // Animation variants
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.4 },
+    },
+    hover: {
+      scale: 1.05,
+      boxShadow: "0px 10px 20px rgba(0,0,0,0.2)",
+    },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 },
+  };
+
   return (
     <>
       <section id="gallery" className="container mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold mb-12 text-white text-center">
+        <motion.h2
+          className="text-4xl font-bold mb-12 text-white text-center"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
           Our Gallery
-        </h2>
+        </motion.h2>
 
         {/* First Event Section - Text on Left */}
-        <div className="mb-16 pb-8 border-b border-gray-700">
+        <motion.div
+          className="mb-16 pb-8 border-b border-gray-700"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Event Description */}
-            <div className="lg:w-1/3 text-white">
-              <h3 className="text-2xl font-bold mb-2">
+            <motion.div className="lg:w-1/3 text-white" variants={textVariants}>
+              <motion.h3
+                className="text-2xl font-bold mb-2"
+                variants={textVariants}
+              >
                 Genesis Graduation & Jacket Ceremony
-              </h3>
-              <p className="text-yellow-300 dark:text-yellow-400 mb-4">
+              </motion.h3>
+              <motion.p
+                className="text-yellow-300 dark:text-yellow-400 mb-4"
+                variants={textVariants}
+              >
                 24 November 2024
-              </p>
-              <p className="mb-4">
+              </motion.p>
+              <motion.p className="mb-4" variants={textVariants}>
                 This was a special moment where we officially graduated from
                 Genesis and received our Himpunan Jacket. It was more than just
                 a ceremony it was a symbol of trust and responsibility.
-              </p>
-              <p className="mb-4">
+              </motion.p>
+              <motion.p className="mb-4" variants={textVariants}>
                 From this day on, we carry the name of Information Systems,
                 Telkom University, with pride and honor. Every thread of the
                 jacket reminds us of our journey, our growth, and our unity.
-              </p>
-              <p>
+              </motion.p>
+              <motion.p variants={textVariants}>
                 This event marked the beginning of our duty as true members of
                 the organization. With hearts full of memories and dreams, we
                 are ready to take our next steps together.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             {/* Event Gallery */}
             <div className="lg:w-2/3">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {galleryImages.map((img, index) => (
-                  <div
+                  <motion.div
                     key={index}
                     className="group relative overflow-hidden rounded-xl cursor-pointer"
                     onClick={() => setSelectedImage(img.src)}
+                    variants={imageVariants}
+                    whileHover="hover"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
                   >
-                    <img
+                    <motion.img
                       src={img.src}
                       alt={img.title}
-                      className="w-full h-64 object-cover transform transition-all duration-500 group-hover:scale-110"
+                      className="w-full h-64 object-cover"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.5 }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       <div className="absolute bottom-4 left-4 text-white">
                         <h3 className="text-lg font-bold">{img.title}</h3>
                         <p className="text-sm">{img.description}</p>
                       </div>
-                    </div>
-                  </div>
+                    </motion.div>
+                  </motion.div>
                 ))}
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Second Event Section - Text on Right */}
-        <div className="mb-16 pb-8 border-b border-gray-700">
+        <motion.div
+          className="mb-16 pb-8 border-b border-gray-700"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="flex flex-col lg:flex-row-reverse gap-8">
             {/* Event Description (now on right) */}
-            <div className="lg:w-1/3 text-white">
-              <h3 className="text-2xl font-bold mb-2">Makrab SI 47 INT</h3>
-              <p className="text-yellow-300 dark:text-yellow-400 mb-4">
+            <motion.div className="lg:w-1/3 text-white" variants={textVariants}>
+              <motion.h3
+                className="text-2xl font-bold mb-2"
+                variants={textVariants}
+              >
+                Makrab SI 47 INT
+              </motion.h3>
+              <motion.p
+                className="text-yellow-300 dark:text-yellow-400 mb-4"
+                variants={textVariants}
+              >
                 10 January 2025
-              </p>
-              <p className="mb-4">
+              </motion.p>
+              <motion.p className="mb-4" variants={textVariants}>
                 Makrab SI 47 INT was a special night where all classmates
                 gathered to get to know each other better. We spent time
                 together in a fun and relaxing place outside the campus.
-              </p>
-              <p className="mb-4">
+              </motion.p>
+              <motion.p className="mb-4" variants={textVariants}>
                 There were many exciting activities like games, and a bonfire.
                 We laughed, talked, and created great memories as a class.
-              </p>
-              <p>
+              </motion.p>
+              <motion.p variants={textVariants}>
                 This event helped us build stronger friendship and teamwork in
                 SI 47 INT. It was a night full of joy, connection, and
                 unforgettable moments for everyone.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             {/* Event Gallery (now on left) */}
             <div className="lg:w-2/3">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {secondEventImages.map((img, index) => (
-                  <div
+                  <motion.div
                     key={index}
                     className="group relative overflow-hidden rounded-xl cursor-pointer"
                     onClick={() => setSelectedImage(img.src)}
+                    variants={imageVariants}
+                    whileHover="hover"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
                   >
-                    <img
+                    <motion.img
                       src={img.src}
                       alt={img.title}
-                      className="w-full h-64 object-cover transform transition-all duration-500 group-hover:scale-110"
+                      className="w-full h-64 object-cover"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.5 }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       <div className="absolute bottom-4 left-4 text-white">
                         <h3 className="text-lg font-bold">{img.title}</h3>
                         <p className="text-sm">{img.description}</p>
                       </div>
-                    </div>
-                  </div>
+                    </motion.div>
+                  </motion.div>
                 ))}
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Third Event Section - Badminton - Text on Left */}
-        <div className="mb-16 pb-8 border-b border-gray-700">
+        <motion.div
+          className="mb-16 pb-8 border-b border-gray-700"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Event Description */}
-            <div className="lg:w-1/3 text-white">
-              <h3 className="text-2xl font-bold mb-2">
+            <motion.div className="lg:w-1/3 text-white" variants={textVariants}>
+              <motion.h3
+                className="text-2xl font-bold mb-2"
+                variants={textVariants}
+              >
                 SI 47 INT Badminton Tournament
-              </h3>
-              <p className="text-yellow-300 dark:text-yellow-400 mb-4">
+              </motion.h3>
+              <motion.p
+                className="text-yellow-300 dark:text-yellow-400 mb-4"
+                variants={textVariants}
+              >
                 26 April 2025
-              </p>
-              <p className="mb-4">
+              </motion.p>
+              <motion.p className="mb-4" variants={textVariants}>
                 We held a fun badminton game to help us stay active and become
                 closer friends. Everyone could play and have fun together.
-              </p>
-              <p className="mb-4">
+              </motion.p>
+              <motion.p className="mb-4" variants={textVariants}>
                 We played at SIGMA GOR. We made courts for one player games and
                 two player games. All students could join, even if they were not
                 good at badminton, so everyone had fun.
-              </p>
-              <p>
+              </motion.p>
+              <motion.p variants={textVariants}>
                 The games gave us a good break from our school work. We could
                 make friends through sports. We cheered, laughed, and worked as
                 a team, which made this day special for everyone.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             {/* Event Gallery */}
             <div className="lg:w-2/3">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {badmintonEventImages.map((img, index) => (
-                  <div
+                  <motion.div
                     key={index}
                     className="group relative overflow-hidden rounded-xl cursor-pointer"
                     onClick={() => {
@@ -295,193 +396,275 @@ const Gallery = (props: Props) => {
                         isVideo(img.src) ? "video" : "image"
                       );
                     }}
+                    variants={imageVariants}
+                    whileHover="hover"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
                   >
                     {isVideo(img.src) ? (
-                      <video
+                      <motion.video
                         src={img.src}
                         className="w-full h-64 object-cover"
                         muted
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.5 }}
                       />
                     ) : (
-                      <img
+                      <motion.img
                         src={img.src}
                         alt={img.title}
-                        className="w-full h-64 object-cover transform transition-all duration-500 group-hover:scale-110"
+                        className="w-full h-64 object-cover"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.5 }}
                       />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       <div className="absolute bottom-4 left-4 text-white">
                         <h3 className="text-lg font-bold">{img.title}</h3>
                         <p className="text-sm">{img.description}</p>
                       </div>
-                    </div>
-                  </div>
+                    </motion.div>
+                  </motion.div>
                 ))}
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Fourth Event Section - GLOW - Text on Right */}
-        <div className="mb-16 pb-8 border-b border-gray-700">
+        <motion.div
+          className="mb-16 pb-8 border-b border-gray-700"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="flex flex-col lg:flex-row-reverse gap-8">
             {/* Event Description */}
-            <div className="lg:w-1/3 text-white">
-              <h3 className="text-2xl font-bold mb-2">
+            <motion.div className="lg:w-1/3 text-white" variants={textVariants}>
+              <motion.h3
+                className="text-2xl font-bold mb-2"
+                variants={textVariants}
+              >
                 GLOW International Program
-              </h3>
-              <p className="text-yellow-300 dark:text-yellow-400 mb-4">
+              </motion.h3>
+              <motion.p
+                className="text-yellow-300 dark:text-yellow-400 mb-4"
+                variants={textVariants}
+              >
                 12 July 2024
-              </p>
-              <p className="mb-4">
+              </motion.p>
+              <motion.p className="mb-4" variants={textVariants}>
                 GLOW is a special program at Telkom University that brings
                 teachers from Malaysia. The program started at Tokong Nanas
                 Building to help students learn in an international way.
-              </p>
-              <p className="mb-4">
+              </motion.p>
+              <motion.p className="mb-4" variants={textVariants}>
                 Six teachers from different Malaysia universities came to teach
                 six subjects. They teach students from four study programs at
                 Telkom University.
-              </p>
-              <p>
+              </motion.p>
+              <motion.p variants={textVariants}>
                 This program helps students learn new things and see how
                 students in other countries learn. It makes Telkom University
                 more international and helps our students get ready for the
                 world.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             {/* Event Gallery */}
             <div className="lg:w-2/3">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {glowEventImages.map((img, index) => (
-                  <div
+                  <motion.div
                     key={index}
                     className="group relative overflow-hidden rounded-xl cursor-pointer"
                     onClick={() => setSelectedImage(img.src)}
+                    variants={imageVariants}
+                    whileHover="hover"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
                   >
-                    <img
+                    <motion.img
                       src={img.src}
                       alt={img.title}
-                      className="w-full h-64 object-cover transform transition-all duration-500 group-hover:scale-110"
+                      className="w-full h-64 object-cover"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.5 }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       <div className="absolute bottom-4 left-4 text-white">
                         <h3 className="text-lg font-bold">{img.title}</h3>
                         <p className="text-sm">{img.description}</p>
                       </div>
-                    </div>
-                  </div>
+                    </motion.div>
+                  </motion.div>
                 ))}
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Fifth Event Section - Buka Bersama - Text on Left */}
-        <div className="mb-16 pb-8 border-b border-gray-700">
+        <motion.div
+          className="mb-16 pb-8 border-b border-gray-700"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Event Description */}
-            <div className="lg:w-1/3 text-white">
-              <h3 className="text-2xl font-bold mb-2">
+            <motion.div className="lg:w-1/3 text-white" variants={textVariants}>
+              <motion.h3
+                className="text-2xl font-bold mb-2"
+                variants={textVariants}
+              >
                 Buka Bersama SI 47 INT
-              </h3>
-              <p className="text-yellow-300 dark:text-yellow-400 mb-4">
+              </motion.h3>
+              <motion.p
+                className="text-yellow-300 dark:text-yellow-400 mb-4"
+                variants={textVariants}
+              >
                 23 March 2024
-              </p>
-              <p className="mb-4">
+              </motion.p>
+              <motion.p className="mb-4" variants={textVariants}>
                 We held a special Buka Bersama event where all students came
                 together. It was a time to share food and stories as we
                 celebrated this special day.
-              </p>
-              <p className="mb-4">
+              </motion.p>
+              <motion.p className="mb-4" variants={textVariants}>
                 Everyone brought different foods to share. We sat together,
                 talked, and waited for the time. Some students also led prayers
                 before we ate.
-              </p>
-              <p>
+              </motion.p>
+              <motion.p variants={textVariants}>
                 This event helped us learn about each other's cultures and grow
                 closer as friends. We made good memories and felt like a real
                 family at SI 47 INT.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             {/* Event Gallery */}
             <div className="lg:w-2/3">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {BUKBERImages.map((img, index) => (
-                  <div
+                  <motion.div
                     key={index}
                     className="group relative overflow-hidden rounded-xl cursor-pointer"
                     onClick={() => setSelectedImage(img.src)}
+                    variants={imageVariants}
+                    whileHover="hover"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
                   >
-                    <img
+                    <motion.img
                       src={img.src}
                       alt={img.title}
-                      className="w-full h-64 object-cover transform transition-all duration-500 group-hover:scale-110"
+                      className="w-full h-64 object-cover"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.5 }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       <div className="absolute bottom-4 left-4 text-white">
                         <h3 className="text-lg font-bold">{img.title}</h3>
                         <p className="text-sm">{img.description}</p>
                       </div>
-                    </div>
-                  </div>
+                    </motion.div>
+                  </motion.div>
                 ))}
               </div>
             </div>
           </div>
-        </div>
-
-        {/* You can copy-paste either event section for additional events */}
+        </motion.div>
       </section>
 
       {/* Image/Video Modal/Lightbox */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedImage(null)}
-        >
-          <div className="relative max-w-7xl w-full">
-            <button
-              title="Close"
-              className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
-              onClick={() => setSelectedImage(null)}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedImage(null)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <motion.div
+              className="relative max-w-7xl w-full"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 20, stiffness: 300 }}
             >
-              <svg
-                className="w-8 h-8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              <motion.button
+                title="Close"
+                className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
+                onClick={() => setSelectedImage(null)}
+                whileHover={{ scale: 1.1, rotate: 90 }}
+                whileTap={{ scale: 0.9 }}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </motion.button>
 
-            {selectedMediaType === "video" ? (
-              <video
-                src={selectedImage}
-                className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
-                controls
-                autoPlay
-                onClick={(e) => e.stopPropagation()}
-              />
-            ) : (
-              <img
-                src={selectedImage}
-                alt="Selected image"
-                className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
-                onClick={(e) => e.stopPropagation()}
-              />
-            )}
-          </div>
-        </div>
-      )}
+              {selectedMediaType === "video" ? (
+                <motion.video
+                  src={selectedImage}
+                  className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
+                  controls
+                  autoPlay
+                  onClick={(e) => e.stopPropagation()}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                />
+              ) : (
+                <motion.img
+                  src={selectedImage}
+                  alt="Selected image"
+                  className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
+                  onClick={(e) => e.stopPropagation()}
+                  layoutId={selectedImage}
+                  transition={{ duration: 0.3 }}
+                />
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
