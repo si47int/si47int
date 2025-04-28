@@ -1,4 +1,3 @@
-// Convert to .js if there are issues with TypeScript config
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
@@ -6,6 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  distDir: "out",
 };
 
 module.exports = nextConfig;
