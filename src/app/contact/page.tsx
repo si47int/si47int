@@ -9,27 +9,29 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-500 via-blue-600 to-blue-800 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="container mx-auto px-4 pb-16 pt-24">
-        <motion.h1
+        <motion.div
           className="text-4xl font-bold text-white mb-12 text-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Contact{" "}
-          <motion.span
-            className="text-yellow-300 dark:text-yellow-400"
-            animate={{
-              textShadow: [
-                "0px 0px 0px rgba(255,255,255,0)",
-                "0px 0px 10px rgba(255,255,255,0.5)",
-                "0px 0px 0px rgba(255,255,255,0)",
-              ],
-            }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            Us
-          </motion.span>
-        </motion.h1>
+          <h1>
+            Contact{" "}
+            <motion.span
+              className="text-yellow-300 dark:text-yellow-400"
+              animate={{
+                textShadow: [
+                  "0px 0px 0px rgba(255,255,255,0)",
+                  "0px 0px 10px rgba(255,255,255,0.5)",
+                  "0px 0px 0px rgba(255,255,255,0)",
+                ],
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              Us
+            </motion.span>
+          </h1>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Location Section */}
