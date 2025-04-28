@@ -13,24 +13,46 @@ const Navbar = () => {
 
   // Handle window resize and initial size detection
   useEffect(() => {
-    // Set initial window width
-    setWindowWidth(window.innerWidth);
-
-    // Update width on resize
-    const handleResize = () => {
+    // Set initial window width on client side only
+    if (typeof window !== "undefined") {
       setWindowWidth(window.innerWidth);
+
+      // Update width on resize
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+
+      window.addEventListener("resize", handleResize);
+
+      // Clean up event listener
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, []);
+
+  // Add scroll state to adjust navbar appearance on scroll
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     };
 
-    window.addEventListener("resize", handleResize);
-
-    // Clean up event listener
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <nav className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-lg fixed w-full z-50 transition-all duration-300">
+    <nav
+      className={`bg-blue-600/90 dark:bg-gray-900/90 backdrop-blur-sm border-b border-white/10 fixed w-full z-50 transition-all duration-300 ${
+        scrolled ? "shadow-lg" : ""
+      }`}
+    >
       <div className="container mx-auto flex flex-wrap items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center space-x-3">
           <img
@@ -40,7 +62,7 @@ const Navbar = () => {
             height={40}
             className="hover:rotate-6 hover:scale-110 transition-transform"
           />
-          <span className="text-lg font-semibold text-gray-900 dark:text-white">
+          <span className="text-lg font-semibold text-white">
             <span className="lg:hidden">SINTER47</span>
             <span className="hidden lg:inline">
               Sinter 47 International Class
@@ -57,11 +79,11 @@ const Navbar = () => {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors active:scale-90"
+            className="lg:hidden p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors active:scale-90"
             aria-label="Toggle navigation"
           >
             <svg
-              className="w-6 h-6 dark:text-white"
+              className="w-6 h-6 text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -96,7 +118,7 @@ const Navbar = () => {
               <li className="hover:scale-105 active:scale-95 transition-transform">
                 <Link
                   href="/"
-                  className="block py-2 px-4 lg:px-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 lg:hover:bg-transparent rounded-lg transition"
+                  className="block py-2 px-4 lg:px-2 text-white hover:bg-white/10 dark:hover:bg-gray-800 lg:hover:bg-transparent rounded-lg transition"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t("aboutUs")}
@@ -105,7 +127,7 @@ const Navbar = () => {
               <li className="hover:scale-105 active:scale-95 transition-transform">
                 <Link
                   href="/album"
-                  className="block py-2 px-4 lg:px-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 lg:hover:bg-transparent rounded-lg transition"
+                  className="block py-2 px-4 lg:px-2 text-white hover:bg-white/10 dark:hover:bg-gray-800 lg:hover:bg-transparent rounded-lg transition"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t("album")}
@@ -114,7 +136,7 @@ const Navbar = () => {
               <li className="hover:scale-105 active:scale-95 transition-transform">
                 <Link
                   href="/contact"
-                  className="block py-2 px-4 lg:px-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 lg:hover:bg-transparent rounded-lg transition"
+                  className="block py-2 px-4 lg:px-2 text-white hover:bg-white/10 dark:hover:bg-gray-800 lg:hover:bg-transparent rounded-lg transition"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t("contact")}
