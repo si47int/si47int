@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 const ContactPage = () => {
   return (
@@ -11,22 +10,12 @@ const ContactPage = () => {
         <div className="text-4xl font-bold text-white mb-12 text-center">
           <h1>
             Contact{" "}
-            <motion.span
-              style={{
-                color: "rgb(252, 211, 77)",
-                textShadow: "0px 0px 10px rgba(255,255,255,0.5)",
-              }}
-              animate={{
-                textShadow: [
-                  "0px 0px 0px rgba(255,255,255,0)",
-                  "0px 0px 10px rgba(255,255,255,0.5)",
-                  "0px 0px 0px rgba(255,255,255,0)",
-                ],
-              }}
-              transition={{ duration: 2, repeat: Infinity }}
+            <span
+              className="text-yellow-300 inline-block"
+              style={{ textShadow: "0px 0px 10px rgba(255,255,255,0.5)" }}
             >
               Us
-            </motion.span>
+            </span>
           </h1>
         </div>
 
@@ -58,61 +47,55 @@ const ContactPage = () => {
             <div className="mb-8">
               <p className="text-white/80 dark:text-gray-300">
                 <strong className="text-white">Email: </strong>
-                <motion.a
+                <a
                   href="mailto:si47int@outlook.com"
                   className="text-yellow-300 dark:text-yellow-400 hover:underline transition-colors"
                   aria-label="Send us an email"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                 >
                   si47int@outlook.com
-                </motion.a>
+                </a>
               </p>
             </div>
 
             <h2 className="text-2xl font-bold text-white mb-4">Follow Us</h2>
             <div className="flex flex-col space-y-4">
-              <motion.a
-                href="https://www.instagram.com/47sinter"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-3 text-white/80 hover:text-white transition-all"
-                aria-label="Follow us on Instagram"
-                whileHover={{ x: 10, color: "#ffffff" }}
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.7 }}
-              >
-                <Image
-                  src="/images/instagramlogo.png"
-                  alt="Instagram Logo"
-                  width={32}
-                  height={32}
-                  className="w-8 h-8"
-                />
-                <span>Follow us on Instagram</span>
-              </motion.a>
+              <div className="flex items-center space-x-3 text-white/80 hover:text-white transition-all">
+                <a
+                  href="https://www.instagram.com/47sinter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 w-full"
+                  aria-label="Follow us on Instagram"
+                >
+                  <Image
+                    src="/images/instagramlogo.png"
+                    alt="Instagram Logo"
+                    width={32}
+                    height={32}
+                    className="w-8 h-8"
+                  />
+                  <span>Follow us on Instagram</span>
+                </a>
+              </div>
 
-              <motion.a
-                href="https://www.youtube.com/@si47int"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-3 text-white/80 hover:text-white transition-all"
-                aria-label="Subscribe to our YouTube channel"
-                whileHover={{ x: 10, color: "#ffffff" }}
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.8 }}
-              >
-                <Image
-                  src="/images/youtubelogo.png"
-                  alt="YouTube Logo"
-                  width={32}
-                  height={32}
-                  className="w-8 h-8"
-                />
-                <span>Subscribe to our YouTube channel</span>
-              </motion.a>
+              <div className="flex items-center space-x-3 text-white/80 hover:text-white transition-all">
+                <a
+                  href="https://www.youtube.com/@si47int"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 w-full"
+                  aria-label="Subscribe to our YouTube channel"
+                >
+                  <Image
+                    src="/images/youtubelogo.png"
+                    alt="YouTube Logo"
+                    width={32}
+                    height={32}
+                    className="w-8 h-8"
+                  />
+                  <span>Subscribe to our YouTube channel</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
