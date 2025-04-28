@@ -1,9 +1,10 @@
+// Convert to .js if there are issues with TypeScript config
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", // Critical for static site generation
+  output: "export",
   basePath: process.env.NODE_ENV === "production" ? "/si47int" : "",
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true,
   },
 };
 
