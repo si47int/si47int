@@ -8,12 +8,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-500 via-blue-600 to-blue-800 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="container mx-auto px-4 pb-16 pt-24">
-        <motion.div
-          className="text-4xl font-bold text-white mb-12 text-center"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="text-4xl font-bold text-white mb-12 text-center">
           <h1>
             Contact{" "}
             <motion.span
@@ -33,24 +28,17 @@ const ContactPage = () => {
               Us
             </motion.span>
           </h1>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Location Section */}
-          <motion.div
-            className="bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl transition-transform hover:scale-[1.02]"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          <div className="bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl transition-transform hover:scale-[1.02]">
             <h2 className="text-2xl font-bold text-white mb-4">Our Location</h2>
             <p className="text-white/80 dark:text-gray-300 mb-6">
               We are at Telkom University, a place where innovation and
               technology come together.
             </p>
-            <motion.div
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
+            <div>
               <iframe
                 width="100%"
                 height="300"
@@ -58,26 +46,16 @@ const ContactPage = () => {
                 loading="lazy"
                 src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Gedung%20Tokong%20Nanas%20Telkom%20University,%20bandung,%20Indonesia+(My%20Business%20Name)&amp;t=h&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
               ></iframe>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Contact Info Section */}
-          <motion.div
-            className="bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl transition-transform hover:scale-[1.02]"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
+          <div className="bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl transition-transform hover:scale-[1.02]">
             <h2 className="text-2xl font-bold text-white mb-4">Get in Touch</h2>
             <p className="text-white/80 dark:text-gray-300 mb-4">
               If you have any questions, please contact us through:
             </p>
-            <motion.div
-              className="mb-8"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-            >
+            <div className="mb-8">
               <p className="text-white/80 dark:text-gray-300">
                 <strong className="text-white">Email: </strong>
                 <motion.a
@@ -90,7 +68,7 @@ const ContactPage = () => {
                   si47int@outlook.com
                 </motion.a>
               </p>
-            </motion.div>
+            </div>
 
             <h2 className="text-2xl font-bold text-white mb-4">Follow Us</h2>
             <div className="flex flex-col space-y-4">
@@ -136,7 +114,7 @@ const ContactPage = () => {
                 <span>Subscribe to our YouTube channel</span>
               </motion.a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>
