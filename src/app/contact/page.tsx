@@ -8,36 +8,36 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-500 via-blue-600 to-blue-800 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="container mx-auto px-4 pb-16 pt-24">
-        <motion.div
+        <motion.h1
           className="text-4xl font-bold text-white mb-12 text-center"
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1>
-            Contact{" "}
-            <motion.span
-              style={{
-                color: "rgb(252, 211, 77)",
-                textShadow: "0px 0px 10px rgba(255,255,255,0.5)",
-              }}
-              animate={{
-                textShadow: [
-                  "0px 0px 0px rgba(255,255,255,0)",
-                  "0px 0px 10px rgba(255,255,255,0.5)",
-                  "0px 0px 0px rgba(255,255,255,0)",
-                ],
-              }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              Us
-            </motion.span>
-          </h1>
-        </motion.div>
+          Contact{" "}
+          <motion.span
+            style={{
+              color: "rgb(252, 211, 77)",
+              textShadow: "0px 0px 10px rgba(255,255,255,0.5)",
+            }}
+            animate={{
+              textShadow: [
+                "0px 0px 0px rgba(255,255,255,0)",
+                "0px 0px 10px rgba(255,255,255,0.5)",
+                "0px 0px 0px rgba(255,255,255,0)",
+              ],
+            }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            Us
+          </motion.span>
+        </motion.h1>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Location Section */}
           <motion.div
             className="bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl transition-transform hover:scale-[1.02]"
+            initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
