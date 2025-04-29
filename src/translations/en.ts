@@ -129,6 +129,7 @@ export const enTranslations = {
   membersDesc:
     "Get to know the amazing individuals who make up Sinter 47 International Class. Each member brings unique talents and perspectives to our community.",
   classMember: "Class Member",
+  watchOnTiktok: "Watch on TikTok",
 
   // Contact page
   contactUs: "Contact Us",

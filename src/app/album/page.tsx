@@ -43,7 +43,6 @@ export default function Album() {
         linkedin: "https://www.linkedin.com/in/agungwira",
         github: "https://github.com/Azdetic",
         email: "mailto:agungindramawan@outlook.com?subject=Hi%20Wira",
-        website: "https://azdetic.github.io/Agwira",
         spotify:
           "https://open.spotify.com/user/c9f0dqmj29gofdem0ta0ur5gh?si=d33d68b4cf1d4cd6",
       },
@@ -122,6 +121,24 @@ export default function Album() {
         email: "mailto:diazreksaputra@gmail.com?subject=Hi%20Diaz",
         spotify:
           "https://open.spotify.com/user/312bxs2uk7dzrqvl7xb7ibdbybfu?si=iaIf1qYVSsuiyxGrJKgcwQ",
+      },
+    },
+    {
+      name: "Christhofer Risaldy Kobong",
+      role: "Class Member",
+      image: "./images/Personimage/Chris/chris.jpg",
+      description: "-",
+      socialLinks: {
+        instagram: "#",
+      },
+    },
+    {
+      name: "Elian",
+      role: "Class Member",
+      image: "./images/Personimage/Elian/el.jpg",
+      description: "-",
+      socialLinks: {
+        instagram: "#",
       },
     },
     // {

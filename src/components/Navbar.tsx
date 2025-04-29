@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSwitcher from "./LanguageSwitcher";
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
@@ -55,12 +56,14 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex flex-wrap items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center space-x-3">
-          <img
-            src="./images/logo.png"
-            alt="Class Logo"
+          {/* Replace external image with local image path */}
+          <Image
+            src="/images/logo.png"
+            alt="Sinter47 Logo"
             width={40}
             height={40}
             className="hover:rotate-6 hover:scale-110 transition-transform"
+            priority
           />
           <span className="text-lg font-semibold text-white">
             <span className="lg:hidden">SINTER47</span>
