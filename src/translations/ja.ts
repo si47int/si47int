@@ -122,6 +122,7 @@ export const jaTranslations = {
   membersDesc:
     "Sinter 47国際クラスを構成する素晴らしい個人を知りましょう。各メンバーは私たちのコミュニティに独自の才能と視点をもたらします。",
   classMember: "クラスメンバー",
+  watchOnTiktok: "TikTokで見る", // Add this line to fix the error
 
   // Contact page
   contactUs: "お問い合わせ",

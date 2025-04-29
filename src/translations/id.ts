@@ -98,6 +98,7 @@ export const idTranslations = {
   membersDesc:
     "Kenali individu-individu luar biasa yang membentuk Kelas Internasional Sinter 47. Setiap anggota membawa bakat dan perspektif unik ke komunitas kami.",
   classMember: "Anggota Kelas",
+  watchOnTiktok: "Tonton di TikTok", // Add this line to fix the error
 
   // Contact page
   contactUs: "Hubungi Kami",
