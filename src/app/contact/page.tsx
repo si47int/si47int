@@ -66,7 +66,7 @@ const ContactPage = () => {
                 aria-label="Follow us on Instagram"
               >
                 <img
-                  src="./instagramlogo.png"
+                  src="./images/instagramlogo.png"
                   alt=""
                   width={32}
                   height={32}
@@ -83,7 +83,7 @@ const ContactPage = () => {
                 aria-label="Subscribe to our YouTube channel"
               >
                 <img
-                  src="./youtubelogo.png"
+                  src="./images/youtubelogo.png"
                   alt=""
                   width={32}
                   height={32}

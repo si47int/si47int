@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="container mx-auto flex flex-wrap items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center space-x-3">
           <img
-            src="./logo.png"
+            src="./images/logo.png"
             alt="Class Logo"
             width={40}
             height={40}
