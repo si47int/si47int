@@ -210,4 +210,8 @@ export const idTranslations = {
   pageNotFoundDesc:
     "Maaf, halaman yang Anda cari tidak ada atau telah dipindahkan. Silakan periksa URL atau kembali ke halaman utama.",
   backToHome: "Kembali ke Beranda",
+
+  // Loading Screen
+  loading: "Memuat",
+  skipLoading: "Lewati",
 };

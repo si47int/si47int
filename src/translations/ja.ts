@@ -201,4 +201,8 @@ export const jaTranslations = {
   pageNotFoundDesc:
     "申し訳ありませんが、お探しのページは存在しないか、移動しました。URLを確認するか、ホームページに戻ってください。",
   backToHome: "ホームに戻る",
+
+  // Loading Screen
+  loading: "読み込み中",
+  skipLoading: "スキップ",
 };

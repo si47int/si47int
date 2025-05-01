@@ -209,4 +209,8 @@ export const enTranslations = {
   pageNotFoundDesc:
     "Sorry, the page you are looking for doesn't exist or has been moved. Please check the URL or go back to the homepage.",
   backToHome: "Back to Home",
+
+  // Loading Screen
+  loading: "Loading",
+  skipLoading: "Skip",
 };

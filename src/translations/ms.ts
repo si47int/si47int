@@ -208,4 +208,8 @@ export const msTranslations = {
   pageNotFoundDesc:
     "Maaf, halaman yang anda cari tidak wujud atau telah dipindahkan. Sila periksa URL atau kembali ke laman utama.",
   backToHome: "Kembali ke Laman Utama",
+
+  // Loading Screen
+  loading: "Memuat",
+  skipLoading: "Langkau",
 };
