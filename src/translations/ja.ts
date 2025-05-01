@@ -195,4 +195,10 @@ export const jaTranslations = {
   bukberImage3Desc: "この特別な時間に絆を築く",
   bukberImage4Title: "集団祈り",
   bukberImage4Desc: "精神性の中で一緒に",
+
+  // 404 Page
+  pageNotFound: "ページが見つかりません",
+  pageNotFoundDesc:
+    "申し訳ありませんが、お探しのページは存在しないか、移動しました。URLを確認するか、ホームページに戻ってください。",
+  backToHome: "ホームに戻る",
 };

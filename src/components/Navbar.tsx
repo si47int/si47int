@@ -58,7 +58,7 @@ const Navbar = () => {
         <Link href="/" className="flex items-center space-x-3">
           {/* Replace external image with local image path */}
           <Image
-            src="/images/logo.png"
+            src="./images/logo.png"
             alt="Sinter47 Logo"
             width={40}
             height={40}

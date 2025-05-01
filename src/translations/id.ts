@@ -204,4 +204,10 @@ export const idTranslations = {
   bukberImage3Desc: "Membangun ikatan selama waktu khusus ini",
   bukberImage4Title: "Doa Bersama",
   bukberImage4Desc: "Bersama dalam spiritualitas",
+
+  // 404 Page
+  pageNotFound: "Halaman Tidak Ditemukan",
+  pageNotFoundDesc:
+    "Maaf, halaman yang Anda cari tidak ada atau telah dipindahkan. Silakan periksa URL atau kembali ke halaman utama.",
+  backToHome: "Kembali ke Beranda",
 };

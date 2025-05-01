@@ -202,4 +202,10 @@ export const msTranslations = {
   bukberImage3Desc: "Membina ikatan semasa waktu istimewa ini",
   bukberImage4Title: "Doa Berkumpulan",
   bukberImage4Desc: "Bersama dalam kerohanian",
+
+  // 404 Page
+  pageNotFound: "Halaman Tidak Dijumpai",
+  pageNotFoundDesc:
+    "Maaf, halaman yang anda cari tidak wujud atau telah dipindahkan. Sila periksa URL atau kembali ke laman utama.",
+  backToHome: "Kembali ke Laman Utama",
 };

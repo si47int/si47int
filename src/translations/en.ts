@@ -203,4 +203,10 @@ export const enTranslations = {
   bukberImage3Desc: "Building bonds during this special time",
   bukberImage4Title: "Group Prayer",
   bukberImage4Desc: "Coming together in spirituality",
+
+  // 404 Page
+  pageNotFound: "Page Not Found",
+  pageNotFoundDesc:
+    "Sorry, the page you are looking for doesn't exist or has been moved. Please check the URL or go back to the homepage.",
+  backToHome: "Back to Home",
 };
