@@ -72,8 +72,8 @@ export default function LoadingScreen({
   };
 
   return (
-    <div className="fixed inset-0 bg-blue-600 dark:bg-gray-900 flex flex-col items-center justify-center z-50">
-      <div className="container max-w-md mx-auto px-4 text-center">
+    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+      <div className="bg-blue-600 dark:bg-gray-900 rounded-xl shadow-2xl p-8 max-w-md w-full mx-4 transform transition-all animate-fadeIn">
         {/* Logo */}
         <div className="mb-8">
           <Image
@@ -106,7 +106,7 @@ export default function LoadingScreen({
         {progress > 20 && (
           <button
             onClick={handleSkip}
-            className="text-white/70 hover:text-white text-sm underline transition-colors"
+            className="w-full py-2 px-4 bg-white/10 hover:bg-white/20 rounded-lg text-white text-sm transition-colors"
           >
             {t("skipLoading")}
           </button>

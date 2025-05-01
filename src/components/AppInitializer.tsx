@@ -27,30 +27,13 @@ export default function AppInitializer({ children }: AppInitializerProps) {
     }
   }, []);
 
-  // Handle page visibility changes to stop/resume animations
-  useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === "visible" && loading) {
-        // If page becomes visible again during loading, we might want to adjust behavior
-      }
-    };
-
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    return () => {
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-    };
-  }, [loading]);
-
   return (
     <div className="relative">
-      {loading && (
-        <div className="fixed inset-0 z-[9999] bg-blue-600 dark:bg-gray-900">
-          <LoadingScreen onComplete={handleLoadingComplete} />
-        </div>
-      )}
+      {/* Main content is always rendered but may be visually obscured by the loading popup */}
+      {children}
 
-      {/* Main content is only rendered after loading completes */}
-      {!loading && children}
+      {/* Loading popup overlay */}
+      {loading && <LoadingScreen onComplete={handleLoadingComplete} />}
     </div>
   );
 }
