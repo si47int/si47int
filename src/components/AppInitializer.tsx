@@ -42,9 +42,15 @@ export default function AppInitializer({ children }: AppInitializerProps) {
   }, [loading]);
 
   return (
-    <>
-      {loading && <LoadingScreen onComplete={handleLoadingComplete} />}
-      <div className={loading ? "invisible" : "visible"}>{children}</div>
-    </>
+    <div className="relative">
+      {loading && (
+        <div className="fixed inset-0 z-[9999] bg-blue-600 dark:bg-gray-900">
+          <LoadingScreen onComplete={handleLoadingComplete} />
+        </div>
+      )}
+
+      {/* Main content is only rendered after loading completes */}
+      {!loading && children}
+    </div>
   );
 }

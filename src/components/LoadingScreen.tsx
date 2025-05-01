@@ -77,7 +77,7 @@ export default function LoadingScreen({
         {/* Logo */}
         <div className="mb-8">
           <Image
-            src="/images/logo.png"
+            src="./images/logo.png"
             alt="Sinter47 Logo"
             width={120}
             height={120}
