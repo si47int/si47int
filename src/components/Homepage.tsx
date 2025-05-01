@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import React from "react";
 import Gallery from "./Gallery";
 import { useLanguage } from "@/contexts/LanguageContext";
+import CountUp from "./CountUp";
 
 type Props = {
   footer?: string;
@@ -44,6 +45,45 @@ const Homepage = (props: Props) => {
               >
                 {t("learnMore")}
               </button>
+            </div>
+
+            {/* Total members counter - enhanced with more creative styling */}
+            <div className="mt-8 group">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 transform transition-all duration-500 hover:scale-105 hover:bg-white/15 relative overflow-hidden">
+                <div className="absolute -right-10 -top-10 w-40 h-40 bg-gradient-to-br from-yellow-300/20 to-pink-500/30 rounded-full blur-2xl"></div>
+                <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-gradient-to-tr from-blue-300/20 to-purple-500/30 rounded-full blur-2xl"></div>
+
+                <h3 className="text-xl font-semibold text-white/90 mb-2 flex items-center">
+                  <svg
+                    className="w-5 h-5 mr-2 text-yellow-300 animate-pulse"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  {t("totalMembers")}
+                </h3>
+
+                <div className="flex items-baseline space-x-1">
+                  <div className="text-5xl font-bold bg-gradient-to-r from-yellow-300 to-pink-500 text-transparent bg-clip-text flex items-baseline">
+                    <CountUp
+                      from={0}
+                      to={26}
+                      duration={3}
+                      className="text-5xl font-extrabold"
+                    />
+                  </div>
+                  <div className="text-2xl font-semibold text-white/70 ml-2">
+                    {t("students")}
+                  </div>
+                </div>
+
+                {/* Progress bar and capacity text removed as requested */}
+              </div>
             </div>
           </div>
           <div className="relative">

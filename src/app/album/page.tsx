@@ -175,7 +175,7 @@ export default function Album() {
           <p className="text-white/90 dark:text-gray-300 text-lg max-w-2xl mx-auto">
             Get to know the amazing individuals who make up Sinter 47
             International Class. Each member brings unique talents and
-            perspectives to our community.
+            perspectives to our Class.
           </p>
         </div>
 

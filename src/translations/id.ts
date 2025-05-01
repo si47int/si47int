@@ -19,6 +19,14 @@ export const idTranslations = {
   globalNetworkDesc: "Berkolaborasi dengan universitas di seluruh dunia",
   listenToAnthem: "Dengarkan Lagu Kami",
 
+  // Homepage counter
+  totalMembers: "Total Anggota",
+  students: "mahasiswa",
+  male: "Laki-laki",
+  female: "Perempuan",
+  international: "Internasional",
+  fullCapacity: "80% dari kapasitas penuh",
+
   // Gallery sections
   ourGallery: "Galeri Kami",
   genesisTitle: "Wisuda Genesis & Upacara Jaket",

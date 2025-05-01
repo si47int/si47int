@@ -18,6 +18,14 @@ export const enTranslations = {
   globalNetworkDesc: "Collaborate with universities worldwide",
   listenToAnthem: "Listen to Our Anthem",
 
+  // Homepage counter
+  totalMembers: "Total Members",
+  students: "students",
+  male: "Male",
+  female: "Female",
+  international: "International",
+  fullCapacity: "80% of full capacity",
+
   // Gallery sections
   ourGallery: "Our Gallery",
 

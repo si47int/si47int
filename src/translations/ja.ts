@@ -18,6 +18,14 @@ export const jaTranslations = {
   globalNetworkDesc: "世界中の大学と協力",
   listenToAnthem: "私たちの歌を聴く",
 
+  // Homepage counter
+  totalMembers: "総メンバー数",
+  students: "学生",
+  male: "男性",
+  female: "女性",
+  international: "国際的",
+  fullCapacity: "全容量の80%",
+
   // Gallery sections
   ourGallery: "ギャラリー",
   genesisTitle: "ジェネシス卒業式＆ジャケット授与式",

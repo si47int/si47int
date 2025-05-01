@@ -19,6 +19,14 @@ export const msTranslations = {
   globalNetworkDesc: "Bekerjasama dengan universiti di seluruh dunia",
   listenToAnthem: "Dengar Lagu Kami",
 
+  // Homepage counter
+  totalMembers: "Jumlah Ahli",
+  students: "pelajar",
+  male: "Lelaki",
+  female: "Perempuan",
+  international: "Antarabangsa",
+  fullCapacity: "80% daripada kapasiti penuh",
+
   // Gallery sections
   ourGallery: "Galeri Kami",
   genesisTitle: "Majlis Graduasi & Penyampaian Jaket Genesis",

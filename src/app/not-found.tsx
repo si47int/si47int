@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Image from "next/image";
+import FuzzyText from "@/components/FuzzyText";
 
 export default function NotFound() {
   const { t } = useLanguage();
@@ -24,7 +25,17 @@ export default function NotFound() {
       {/* Content - positioned above the background */}
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="mb-8 text-center">
-          <h1 className="text-9xl font-bold text-white mb-2">404</h1>
+          {/* Replace static 404 text with FuzzyText component */}
+          <div className="text-white mb-2 flex justify-center">
+            <FuzzyText
+              baseIntensity={0.2}
+              hoverIntensity={0.5}
+              enableHover={true}
+              fontSize="clamp(5rem, 20vw, 12rem)"
+            >
+              404
+            </FuzzyText>
+          </div>
           <div className="relative inline-block">
             <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-pink-500 rounded-lg blur-md opacity-75"></div>
             <h2 className="relative text-3xl md:text-4xl font-bold text-white mb-4 py-2 px-6 rounded-lg bg-white/10 backdrop-blur-sm">
